@@ -53,4 +53,22 @@ public class HashMapPractice
          System.out.println(map.get("FName"));
     }
 
+    @Test
+    public static void iterateValuesInMap()
+    {
+         for(String val:map.values())
+         {
+             System.out.println(val);
+         }
+
+    }
+    @Test
+    public static void iterateKeysInMap()
+    {
+        for(String key:map.keySet())
+        {
+            System.out.println(key);
+        }
+
+    }
 }
