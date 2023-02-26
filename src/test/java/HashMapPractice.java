@@ -71,4 +71,15 @@ public class HashMapPractice
         }
 
     }
+    @Test
+    public static void iterateKeysInMapUsingLambdaExp()
+    {
+
+        map.forEach((key,value)->
+        {
+            System.out.println(key);
+            System.out.println(value);
+        });
+
+    }
 }
