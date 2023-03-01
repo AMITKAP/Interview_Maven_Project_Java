@@ -57,4 +57,27 @@ public class ArrayListPractice
         }
 
     }
+
+    @Test
+    public static boolean numberPalindrome()
+    {
+        int numberOfDigits=String.valueOf(121).length();
+        int reminder=0;
+        int quotient=0;
+        double reverseNumber=0;
+        quotient=121;
+
+        for(int i=1;i<=numberOfDigits;i++)
+        {
+            reminder= quotient%10;
+            quotient=121/10;
+
+            reverseNumber=reverseNumber+reminder*Math.pow(10,(numberOfDigits-1));
+        }
+
+        if(121==(int)reverseNumber)
+            return true;
+        else
+            return false;
+    }
 }

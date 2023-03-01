@@ -1,19 +1,36 @@
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 public class HashMapPractice
 {
     private static HashMap<String,String> map;
+    private static int numberOfDigits;
+    private static int reminder=0;
+    private static int quotient=0;
+    private static double reverseNumber=0;
+
 
     @BeforeTest
-    public static void createMap()
+    public static void createMapForTest()
     {
 
         map=new HashMap<String,String>();
+        map.put("LName","Sum");
         map.put("FName","Amit");
-        map.put("LName","Kapoor");
+        numberOfDigits=String.valueOf(121).length();
+        quotient=121;
+    }
+
+    @AfterTest
+    public static void clearMapForTest()
+    {
+
+        map.clear();
+
     }
 
     @Test
@@ -82,4 +99,19 @@ public class HashMapPractice
         });
 
     }
+    @Test
+    public static void sortedMap()
+    {
+
+        System.out.println(new TreeMap<>(map));
+
+    }
+    @Test
+    public static void synchronizedHashMap()
+    {
+
+        Collections.synchronizedMap(map);
+
+    }
+
 }
