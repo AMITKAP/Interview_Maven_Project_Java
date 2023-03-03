@@ -4,13 +4,17 @@ public class StringPractice
 {
 
     private static String str1,str2;
+    private static StringBuilder builder;
 
      StringPractice()
 
      {
          str1="amit kap";
          str2="sum kap";
+         builder=new StringBuilder("amit");
      }
+
+     //* String class methods *//
 
      @Test
      public static void stringLength()
@@ -65,5 +69,50 @@ public class StringPractice
         System.out.println(str1.concat(str2));
     }
 
+    //* String builder class methods * //
+
+    @Test
+    public static void stringBuilderAppend()
+    {
+        System.out.println(builder.append("kap"));
+    }
+
+    @Test
+    public static void stringBuilderInsert()
+    {
+        System.out.println(builder.insert(1,"sum"));
+    }
+
+    @Test
+    public static void stringBuilderDelete()
+    {
+        System.out.println(builder.delete(1,2));
+    }
+
+    @Test
+    public static void stringBuilderReverse()
+    {
+        System.out.println(builder.reverse());
+    }
+
+    @Test
+    public static void stringBuilderReplace()
+    {
+        System.out.println(builder.replace(1,2,"a"));
+    }
+
+    @Test
+    public static void setCharacterAt()
+    {
+        builder.setCharAt(1,'a');
+        System.out.println(builder);
+    }
+
+    @Test
+    public static void deleteCharacterAt()
+    {
+        builder.deleteCharAt(1);
+        System.out.println(builder);
+    }
 
 }
