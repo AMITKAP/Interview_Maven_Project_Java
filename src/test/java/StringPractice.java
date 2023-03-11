@@ -14,8 +14,6 @@ public class StringPractice
          builder=new StringBuilder("amit");
      }
 
-     //* String class methods *//
-
      @Test
      public static void stringLength()
      {
@@ -68,8 +66,6 @@ public class StringPractice
     {
         System.out.println(str1.concat(str2));
     }
-
-    //* String builder class methods * //
 
     @Test
     public static void stringBuilderAppend()
