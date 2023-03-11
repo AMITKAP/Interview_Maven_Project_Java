@@ -115,6 +115,31 @@ public class StringPractice
         System.out.println(builder);
     }
 
+    @Test
+    public static void stringsComp()
+    {
+
+        String str1="amit kapoor";
+        String str2="amit kapoor";
+        String str3= new String("amit kapoor");
+        String str4= new String("amit");
+
+
+        System.out.println(str1.compareTo(str2));
+        System.out.println(str1.equals(str2));
+        System.out.println(str1==str2);
+
+        System.out.println("-------------------");
+
+        System.out.println(str1.compareTo(str3));
+        System.out.println(str1.equals(str3));
+        System.out.println(str1==str3);
+
+        System.out.println("-------------------");
+
+        System.out.println(str1.compareTo(str4));
+
+    }
 
 
 }

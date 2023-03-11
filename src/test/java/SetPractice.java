@@ -1,17 +1,20 @@
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class SetPractice
 {
 
       private static HashSet<String> hS1;
       private static HashSet<String> hS2;
+      private static LinkedHashSet<String> ls;
+      private static TreeSet<String> ts;
       SetPractice()
       {
           hS1=new HashSet<String>();
           hS2=new HashSet<String>();
+          ls=new LinkedHashSet<>(hS1);
+          ts=new TreeSet<String>();
       }
 
       @BeforeTest
@@ -98,9 +101,37 @@ public class SetPractice
     public static void arrayFunction()
     {
 
-        for(Object str:hS1.toArray())
-        System.out.println(str);
+        for(Object str:hS1.toArray()) {
+            System.out.println(str);
+        }
+    }
+
+    @Test
+    public static void synchronizedHashset()
+    {
+
+        Collections.synchronizedSet(hS1);
 
     }
+
+    @Test
+    public static void linkedHashset()
+    {
+            System.out.println(ls);
+
+    }
+    @Test
+    public static void treeSet()
+    {
+
+        ts.add("b");
+        ts.add("a");
+        ts.add("c");
+        ts.add("a");
+        System.out.println(ts);
+
+    }
+
+
 
 }
