@@ -94,7 +94,6 @@ public class ArrayListPractice
         }
 
     }
-
     @Test
     public static void sortArrayList()
     {

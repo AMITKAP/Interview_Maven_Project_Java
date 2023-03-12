@@ -8,29 +8,19 @@ import java.util.TreeMap;
 public class HashMapPractice
 {
     private static HashMap<String,String> map;
-    private static int numberOfDigits;
-    private static int reminder=0;
-    private static int quotient=0;
-    private static double reverseNumber=0;
-
 
     @BeforeTest
     public static void createMapForTest()
     {
-
         map=new HashMap<String,String>();
         map.put("LName","Sum");
         map.put("FName","Amit");
-        numberOfDigits=String.valueOf(121).length();
-        quotient=121;
     }
 
     @AfterTest
     public static void clearMapForTest()
     {
-
         map.clear();
-
     }
 
     @Test
@@ -102,16 +92,13 @@ public class HashMapPractice
     @Test
     public static void sortedMap()
     {
-
         System.out.println(new TreeMap<>(map));
 
     }
     @Test
     public static void synchronizedHashMap()
     {
-
         Collections.synchronizedMap(map);
-
     }
 
 }
