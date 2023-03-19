@@ -1,6 +1,4 @@
 import org.testng.annotations.Test;
-
-import javax.print.DocFlavor;
 import java.util.Arrays;
 import java.util.List;
 
@@ -90,7 +88,7 @@ public class JavaCodingPractice
     }
 
     @Test
-    public static void stringArrayEquality()
+    public void stringArrayEquality()
     {
 
         String[] word1 =new String[]{"ab","c"};
@@ -112,7 +110,7 @@ public class JavaCodingPractice
     }
 
     @Test
-    public static boolean numberPalindrome()
+    public boolean numberPalindrome()
     {
         int numberOfDigits=String.valueOf(121).length();
         int reminder=0;
@@ -132,6 +130,26 @@ public class JavaCodingPractice
             return true;
         else
             return false;
+    }
+
+    @Test
+    public void removeVowelsFromAString()
+    {
+        String test="amit kapoor";
+        StringBuilder bh=new StringBuilder();
+
+        for(char ch:test.toCharArray())
+        {
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            {
+                 continue;
+            }
+            else
+                bh.append(ch);
+        }
+
+     System.out.println(bh.toString());
+
     }
 
 }
