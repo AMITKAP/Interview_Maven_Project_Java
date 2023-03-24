@@ -3,6 +3,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class HashMapPractice
@@ -44,6 +45,16 @@ public class HashMapPractice
     {
         System.out.println(map.size());
 
+    }
+
+    @Test
+    public static void iterateKeySetInMap()
+    {
+        for(Map.Entry<String,String> ent :map.entrySet())
+        {
+            System.out.println(ent.getKey());
+            System.out.println(ent.getValue());
+        }
     }
 
     @Test

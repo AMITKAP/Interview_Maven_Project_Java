@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Test Suite">
+    <parameter name="browserName" value="Chrome"></parameter>
+   <test name="Test Name1">
+       <groups>
+           <run>
+               <include name="Smoke"></include>
+           </run>
+       </groups>
+    <classes>
+     <class name="CharacterClass">
+         <methods>
+             <include name="T.*"></include>
+         </methods>
+     </class>
+    </classes>
+   </test>
+
+    <test name="Test Name2">
+        <classes>
+            <class name="CharacterClass">
+             <methods>
+                 <exclude name="IsCase"></exclude>
+             </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <packages>
+
+    </packages>
+</suite>

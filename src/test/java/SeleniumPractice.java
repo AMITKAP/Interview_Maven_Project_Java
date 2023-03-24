@@ -7,22 +7,22 @@ import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SeleniumPractice {
     private static WebDriver driver;
 
     @BeforeTest
-    public static void driverSetup() {
+    @Parameters({"BrowserName"})
+    public static void driverSetup(String bRName) {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -31,6 +31,7 @@ public class SeleniumPractice {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.get("https://demoqa.com/select-menu");
+        System.out.println(bRName);
     }
 
     @Test
@@ -92,15 +93,16 @@ public class SeleniumPractice {
       soft.assertAll();
     }
 
-    @Test
-    public static void openingMultipleTabs()
+    @Test(dependsOnGroups ={"Smoke","Regression"})
+    public static void openingMultipleTabsAndSwitching()
     {
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.switchTo().newWindow(WindowType.TAB);
+        driver.switchTo().defaultContent();
     }
 
-    @Test
-    public static void getWindowHandles()
+    @Test(dependsOnMethods ={"takingElemScreenShot","getEleDimension"})
+    public void getWindowHandles()
     {
 
         driver.getWindowHandles();
@@ -108,11 +110,32 @@ public class SeleniumPractice {
 
     }
 
-    @Test
+    @Test(groups = "Smoke")
     public static void takingElemScreenShot()
     {
 
        File src= driver.findElement(By.id("")).getScreenshotAs(OutputType.FILE);
 
     }
+    @Test
+    public static void getEleDimension()
+    {
+
+        int h= driver.findElement(By.id("")).getRect().getDimension().height;
+        int hi= driver.findElement(By.id("")).getRect().getDimension().getHeight();
+        int w= driver.findElement(By.id("")).getRect().getDimension().width;
+        int wi= driver.findElement(By.id("")).getRect().getDimension().getWidth();
+
+    }
+
+    @Test
+    public static void relativeLocators()
+    {
+
+        RelativeLocator.with(By.id("")).above(By.className(""));
+        RelativeLocator.with(By.id("")).below(By.className(""));
+        RelativeLocator.with(By.id("")).near(By.className(""));
+
+    }
+
 }
