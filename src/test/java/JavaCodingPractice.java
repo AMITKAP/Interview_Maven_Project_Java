@@ -1,6 +1,8 @@
 import org.testng.annotations.Test;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JavaCodingPractice
 {
@@ -9,6 +11,7 @@ public class JavaCodingPractice
     public static void checkVowelsInAString()
     {
         String testString="amit kapoor";
+        String testString1="010101";
         System.out.println(testString.toLowerCase().matches(".*[aeiou].*"));
     }
 
@@ -150,6 +153,67 @@ public class JavaCodingPractice
 
      System.out.println(bh.toString());
 
+    }
+
+    @Test
+    public void maxOcuCharInAString()
+    {
+        String test="amit kapooor";
+        char maxKey =0;
+        HashMap<Character,Integer> map= new HashMap<Character,Integer>();
+
+        for(char ch: test.toCharArray())
+        {
+            if(map.containsKey(ch))
+            {
+
+                map.put(ch,map.get(ch)+1);
+            }
+            else
+            {
+                map.put(ch,1);
+            }
+        }
+
+        int maxOcu=map.get(test.charAt(0));
+        maxKey=test.charAt(0);
+
+        for(Map.Entry<Character,Integer> ent: map.entrySet())
+        {
+            if(ent.getValue()>maxOcu)
+            {
+                maxKey= ent.getKey();
+            }
+
+        }
+
+        System.out.println(maxKey);
+
+    }
+
+    @Test
+    public void separatingZerosFromNonZeros()
+    {
+        int[] array={1,0,2,6,7,0};
+        int[] finalArray=new int[array.length];
+        int k = 0;
+
+        for(int i=0;i<array.length;i++)
+        {
+
+            if (array[i] != 0) {
+                finalArray[i] = array[i];
+                k++;
+            }
+
+        }
+
+        for(int l=k;l<finalArray.length;l++)
+        {
+                finalArray[l]=0;
+        }
+
+        System.out.println(Arrays.toString(finalArray));
     }
 
 }

@@ -1,8 +1,13 @@
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
@@ -19,10 +24,15 @@ import java.net.URL;
 
 public class SeleniumPractice {
     private static WebDriver driver;
+    private static String reportPath ;
+
+    private static ExtentReports rep;
+    private static ThreadLocal<ExtentTest> tL;
 
     @BeforeTest
     @Parameters({"BrowserName"})
-    public static void driverSetup(String bRName) {
+    public static void driverSetup(String bRName)
+    {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -32,11 +42,21 @@ public class SeleniumPractice {
         driver.manage().deleteAllCookies();
         driver.get("https://demoqa.com/select-menu");
         System.out.println(bRName);
+        reportPath=System.getProperty("user.dir")+"\\reports\\report.html";
+        ExtentSparkReporter reporter=new ExtentSparkReporter(reportPath);
+        reporter.config().setReportName("Test1");
+        reporter.config().setDocumentTitle("Test Title");
+        rep=new ExtentReports();
+        rep.attachReporter(reporter);
+        rep.setSystemInfo("Sys","Info");
+
+
     }
 
     @Test
     public static void selectDropDown() {
 
+        ExtentTest test =rep.createTest("Test");
         WebElement el = driver.findElement(By.id("oldSelectMenu"));
         Select sel = new Select(el);
         System.out.println(sel.getFirstSelectedOption().getText());
@@ -45,6 +65,10 @@ public class SeleniumPractice {
         sel.selectByIndex(2);
         sel.selectByVisibleText("Red");
         sel.selectByValue("8");
+        test.log(Status.PASS,"test finished");
+        tL.set(test);
+        tL.get();
+        rep.flush();
     }
 
     @Test
@@ -127,7 +151,6 @@ public class SeleniumPractice {
         int wi= driver.findElement(By.id("")).getRect().getDimension().getWidth();
 
     }
-
     @Test
     public static void relativeLocators()
     {
@@ -137,5 +160,23 @@ public class SeleniumPractice {
         RelativeLocator.with(By.id("")).near(By.className(""));
 
     }
+    @Test
+    public static void switchToFrame()
+    {
+        driver.switchTo().frame(0);
+        driver.switchTo().frame("frame name or id");
+        driver.switchTo().frame(driver.findElement(By.id("")));
+        driver.switchTo().parentFrame();
+    }
 
+    @Test
+    public static void actionClass()
+    {
+       Actions act= new Actions(driver);
+       act.clickAndHold(driver.findElement(By.id(""))).build().perform();
+       act.dragAndDrop(driver.findElement(By.id("")),driver.findElement(By.id("")));
+       act.doubleClick();
+       act.contextClick();
+       act.moveToElement(driver.findElement(By.id("")));
+    }
 }

@@ -123,13 +123,11 @@ public class SetPractice
     @Test
     public static void treeSet()
     {
-
         ts.add("b");
         ts.add("a");
         ts.add("c");
         ts.add("a");
         System.out.println(ts);
-
     }
 
 }
