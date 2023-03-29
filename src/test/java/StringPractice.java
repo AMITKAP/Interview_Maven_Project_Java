@@ -133,5 +133,20 @@ public class StringPractice
 
     }
 
+    @Test
+    public static void indexOf()
+    {
+        System.out.println(str1.indexOf("amit"));
+        System.out.println(str1.indexOf("amit",2));
+        System.out.println(str1.lastIndexOf("amit"));
+        System.out.println(str1.lastIndexOf("amit",2));
+    }
+
+    @Test
+    public static void subString()
+    {
+        System.out.println(str1.substring(0));
+        System.out.println(str1.substring(0,2));
+    }
 
 }

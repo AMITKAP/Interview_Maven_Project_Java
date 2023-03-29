@@ -1,8 +1,7 @@
 import org.testng.annotations.Test;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import javax.swing.plaf.nimbus.State;
+import java.util.*;
 
 public class JavaCodingPractice
 {
@@ -214,6 +213,51 @@ public class JavaCodingPractice
         }
 
         System.out.println(Arrays.toString(finalArray));
+    }
+
+    @Test
+    public void removeAllAdjacentChars()
+    {
+            String str="cccc";
+            Stack<Character> st=new Stack<Character>();
+
+            for(char ch:str.toCharArray())
+            {
+                if(st.isEmpty())
+                {
+                    st.push(ch);
+                }
+                else
+                {
+                    if(st.peek()==ch)
+                        st.pop();
+                    else
+                        st.push(ch);
+                }
+            }
+
+            System.out.println(st.toString());
+    }
+
+    @Test
+    public void fibonacciSeries()
+    {
+
+        int current =1;
+        int previous =0;
+        int next=0;
+        ArrayList<Integer> al= new ArrayList<Integer>();
+
+
+        for(int i=0;i<20;i++)
+        {
+            next=current+previous;
+            al.add(next);
+            previous=current;
+            current=next;
+        }
+
+        System.out.println(al.toString());
     }
 
 }

@@ -53,7 +53,7 @@ public class SeleniumPractice {
 
     }
 
-    @Test
+    @Test(retryAnalyzer =retryAnalyzerClass.class)
     public static void selectDropDown() {
 
         ExtentTest test =rep.createTest("Test");
