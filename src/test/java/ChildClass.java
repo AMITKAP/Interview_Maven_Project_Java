@@ -1,7 +1,7 @@
 import org.testng.annotations.Test;
 public class ChildClass extends SuperAndThisKeyword
 {
-    String str ="I'm instance variable from child class";
+    String str ="I'm an instance variable from child class";
     ChildClass()
     {
         super("print");
