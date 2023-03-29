@@ -18,7 +18,6 @@ public class WrapperClassPractice
 
 
     }
-
     @Test
     public static void valueOfFunctionBoxing()
     {

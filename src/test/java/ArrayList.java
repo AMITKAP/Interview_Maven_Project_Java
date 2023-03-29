@@ -3,17 +3,17 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.*;
 
-public class ArrayListPractice
+public class ArrayList
 {
-      private static ArrayList<String> arrayListObj1;
-      private static ArrayList<String> arrayListObj2;
+      private static java.util.ArrayList<String> arrayListObj1;
+      private static java.util.ArrayList<String> arrayListObj2;
       private static ListIterator<String> lItr;
 
       @BeforeTest
       public void CreateArrayList()
       {
-            arrayListObj1= new ArrayList<String>();
-            arrayListObj2= new ArrayList<String>();
+            arrayListObj1= new java.util.ArrayList<String>();
+            arrayListObj2= new java.util.ArrayList<String>();
             arrayListObj1.add("ai");
             arrayListObj1.add(1,"I'm ArrayList");
             arrayListObj1.add("I'm");
@@ -52,6 +52,7 @@ public class ArrayListPractice
     {
         System.out.println(arrayListObj1.remove(1));
         System.out.println(arrayListObj1.remove("Hi"));
+        System.out.println(arrayListObj1.removeAll(arrayListObj2));
     }
 
     @Test

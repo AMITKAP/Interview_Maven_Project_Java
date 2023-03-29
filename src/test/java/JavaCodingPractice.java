@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 
 import javax.swing.plaf.nimbus.State;
 import java.util.*;
+import java.util.ArrayList;
 
 public class JavaCodingPractice
 {
@@ -246,7 +247,7 @@ public class JavaCodingPractice
         int current =1;
         int previous =0;
         int next=0;
-        ArrayList<Integer> al= new ArrayList<Integer>();
+        ArrayList al= new ArrayList<Integer>();
 
 
         for(int i=0;i<20;i++)
@@ -258,6 +259,34 @@ public class JavaCodingPractice
         }
 
         System.out.println(al.toString());
+    }
+
+    @Test
+    public void magicNumber()
+    {
+        int magicNumber=1234;
+        if(magicNumber%9==1)
+            System.out.println("Magic Number");
+        else
+            System.out.println("Not Magic Number");
+    }
+
+    @Test
+    public void primeNumberCheck()
+    {
+
+        int number =23;
+        boolean flag=true;
+        for(int i=2;i<number;i++)
+        {
+            if(number%i==0) {
+                System.out.println("Not a prime number");
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+            System.out.println("Prime Number");
     }
 
 }
