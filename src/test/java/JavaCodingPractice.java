@@ -3,6 +3,8 @@ import org.testng.annotations.Test;
 import javax.swing.plaf.nimbus.State;
 import java.util.*;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class JavaCodingPractice
 {
@@ -287,6 +289,21 @@ public class JavaCodingPractice
         }
         if(flag)
             System.out.println("Prime Number");
+    }
+
+    @Test
+    public void findAllVowelsInAString()
+    {
+        String test="amit kapoor";
+
+        Pattern pat=Pattern.compile("[aeiou]");
+        Matcher match=pat.matcher(test);
+
+        while(match.find())
+        {
+            System.out.println(match.start());
+        }
+
     }
 
 }

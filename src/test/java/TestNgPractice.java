@@ -1,7 +1,10 @@
 import org.testng.ITestResult;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+@Listeners(TestNgListner.class)
 public class TestNgPractice
 {
 
@@ -31,6 +34,42 @@ public class TestNgPractice
           {
             System.out.println("Failed");
           }
+    }
+
+    @Test(groups ={"Smoke"})
+    public void grpAnotationTest()
+    {
+
+        System.out.println("I'm grp smoke test");
+
+    }
+
+    @Test(dependsOnGroups ="Smoke")
+    public void dependentsOnGrpTest()
+    {
+
+        System.out.println("I'm depends on grp smoke test");
+
+    }
+
+    @Test
+    public void optionalPram(@Optional String param)
+    {
+        System.out.println(param);
+    }
+
+    @Test(invocationCount = 1)
+    public void invocationCnt()
+    {
+        System.out.println("I'm");
+
+    }
+
+    @Test(expectedExceptions ={IndexOutOfBoundsException.class} )
+    public void throwingExceptions()
+    {
+
+        throw new IndexOutOfBoundsException();
     }
 
 }
