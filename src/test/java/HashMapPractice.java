@@ -67,7 +67,7 @@ public class HashMapPractice
     @Test
     public static void replaceAValueFromMap()
     {
-         map.replace("FName","Ram");
+         System.out.println(map.replace("FName","Ram"));
          System.out.println(map.get("FName"));
     }
 

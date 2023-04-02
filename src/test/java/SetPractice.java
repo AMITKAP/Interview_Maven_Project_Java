@@ -88,6 +88,7 @@ public class SetPractice
     public static void sizeFunction()
     {
         System.out.println(hS1.size());
+        System.out.println(hS1.toString());
 
     }
     @Test

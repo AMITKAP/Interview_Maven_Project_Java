@@ -1,6 +1,5 @@
 import org.testng.annotations.Test;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 public class RegularExpression
 {
@@ -18,12 +17,10 @@ public class RegularExpression
         count++;
         System.out.println(mat.start());
         System.out.println(mat.end());
+        System.out.println(mat.group());
 
        }
        System.out.println(count);
-
-       pat.split("\\.");
-       pat.split("[.]");
 
     }
 
@@ -36,4 +33,72 @@ public class RegularExpression
         System.out.println(str1);
     }
 
+    @Test
+    public void regularExpEitherABC ()
+    {
+        String test="001c";
+
+        Pattern pat=Pattern.compile("[abc]");
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println(match.start());
+            System.out.println(match.end());
+        }
+
+    }
+
+    @Test
+    public void regularExpExceptABC()
+    {
+        String test="001c";
+
+        Pattern pat=Pattern.compile("[^abc]");
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+match.end());
+            System.out.println("----------------------------");
+        }
+
+    }
+
+    @Test
+    public void regularExpDigit()
+    {
+        String test="001c";
+
+        Pattern pat=Pattern.compile("\\d");
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+match.end());
+            System.out.println("Pat Or Character="+match.group());
+            System.out.println("----------------------------");
+        }
+
+    }
+
+    @Test
+    public void regularExpSpecialCharacter()
+    {
+        String test="001c@@!";
+
+        Pattern pat=Pattern.compile("\\W");
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+match.end());
+            System.out.println("Pat Or Character="+match.group());
+            System.out.println("----------------------------");
+        }
+
+    }
 }

@@ -26,6 +26,7 @@ public class LinkedList
         System.out.println(linkList.getFirst());
         linkList.getLast();
         System.out.println(linkList.peek());
+        System.out.println(linkList.poll());
     }
 
     @Test
@@ -34,6 +35,15 @@ public class LinkedList
         linkList.size();
         linkList.clear();
 
+    }
+
+    @Test
+    public void removeList()
+    {
+        linkList.remove("");
+        linkList.remove(0);
+        linkList.removeFirst();
+        linkList.removeLast();
     }
 
     @Test

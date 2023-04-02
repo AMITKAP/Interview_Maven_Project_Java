@@ -58,7 +58,7 @@ public class TestNgPractice
         System.out.println(param);
     }
 
-    @Test(invocationCount = 1)
+    @Test(invocationCount = 1,enabled = false,threadPoolSize = 1)
     public void invocationCnt()
     {
         System.out.println("I'm");

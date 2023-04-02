@@ -11,7 +11,14 @@ public class ChildClass extends SuperAndThisKeyword
     public void createInstance()
     {
           ChildClass obj= new ChildClass();
+          System.out.println(obj);
           System.out.println(super.str);
           System.out.println(this.str);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "I'm from child class tostring";
     }
 }
