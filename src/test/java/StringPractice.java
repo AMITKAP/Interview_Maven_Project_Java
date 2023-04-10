@@ -1,5 +1,7 @@
 import org.testng.annotations.Test;
 
+import java.util.StringTokenizer;
+
 public class StringPractice
 {
 
@@ -155,4 +157,36 @@ public class StringPractice
       System.out.println(str1.charAt(0));
     }
 
+    @Test
+    public void startsWith()
+    {
+        System.out.println(str1.startsWith("a"));
+        System.out.println(str1.endsWith("b"));
+    }
+
+    @Test
+    public void stringTokenizer()
+    {
+        String test="amit@kapoor";
+        StringTokenizer token= new StringTokenizer(test,"@");
+
+        while ((token.hasMoreTokens()))
+        {
+            System.out.println(token.nextToken());
+        }
+
+
+    }
+
+    @Test
+    public void stringsEquals()
+    {
+        String test ="ab";
+        String test1 ="ba";
+
+        System.out.println(test1.equals(test));
+    }
+
 }
+
+

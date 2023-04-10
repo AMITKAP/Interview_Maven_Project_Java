@@ -101,4 +101,60 @@ public class RegularExpression
         }
 
     }
+
+    @Test
+    public void regularExpSpecialDotCharacter()
+    {
+        String test="001c@@!";
+
+        Pattern pat=Pattern.compile(".");
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+match.end());
+            System.out.println("Pat Or Character="+match.group());
+            System.out.println("----------------------------");
+        }
+
+    }
+    @Test
+    public void regularEx()
+    {
+       String test="^1^9=8=9=14";
+       String regEx="^[\\^]1[\\^][8][\\=][9][\\=]14$";
+
+       Pattern pat=Pattern.compile(regEx);
+       Matcher match=pat.matcher(test);
+
+        System.out.println("Found="+test.matches(regEx));
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+match.end());
+            System.out.println("Pat Or Character="+match.group());
+            System.out.println("----------------------------");
+        }
+    }
+
+    @Test
+    public void logicalOrOperatorRegEx()
+    {
+
+        String test="^8=12^8=234^35=9^10=5123";
+        String pattern="\\^8|\\^35|(\\^10=[0-9]+$)";
+
+        Pattern pat=Pattern.compile(pattern);
+        Matcher match=pat.matcher(test);
+
+        while (match.find())
+        {
+            System.out.println("Start Index="+match.start());
+            System.out.println("End Index="+(match.end()-1));
+            System.out.println("Patter Or Character matched="+match.group());
+            System.out.println("----------------------------");
+        }
+
+    }
 }

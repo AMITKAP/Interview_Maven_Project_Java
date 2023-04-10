@@ -306,4 +306,51 @@ public class JavaCodingPractice
 
     }
 
+    @Test
+    public void removeDuplicatesFromAString()
+    {
+       String test="amit kapoor";
+       StringBuilder bld=new StringBuilder();
+       HashSet<Character> set=new HashSet<Character>();
+
+       for(int i=0;i<test.length();i++)
+       {
+           if(!set.contains(test.charAt(i)))
+           {
+              set.add(test.charAt(i));
+              bld.append(test.charAt(i));
+           }
+       }
+
+       System.out.println(bld.toString());
+    }
+
+    @Test
+    public void subStringFinder1()
+    {
+        String test="amit kapoor";
+        String sub="amit";
+
+        System.out.println(test.matches("(.*)"+sub+"(.*)"));
+    }
+
+    @Test
+    public void subStringFinder2()
+    {
+        String test="amit kapoor";
+        String sub="ram";
+
+        System.out.println(test.indexOf(sub));
+    }
+
+    @Test
+    public void numbersAvgUsingStream()
+    {
+
+        int num[]={10,20,3};
+
+        System.out.println(Arrays.stream(num).average().getAsDouble());
+
+    }
+
 }

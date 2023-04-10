@@ -1,17 +1,16 @@
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class RestAssuredApiPractice
+public class RestAssured
 {
 
     Response res;
-    RestAssuredApiPractice()
+    RestAssured()
     {
-        res= RestAssured.get("https://api.restful-api.dev/objects");
+        res= io.restassured.RestAssured.get("https://api.restful-api.dev/objects");
 
     }
     @Test
@@ -50,6 +49,5 @@ public class RestAssuredApiPractice
        }
 
     }
-
 
 }

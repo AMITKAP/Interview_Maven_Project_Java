@@ -101,4 +101,16 @@ public class ArrayList
         Collections.sort(arrayListObj1);
         System.out.println(arrayListObj1);
     }
+
+    @Test
+    public static void stringToArrayListAndGettingFreq()
+    {
+
+        String str = "Geeks";
+        String[] strSplit = str.split("");
+        List<String> al= Arrays.asList(strSplit);
+        System.out.println(Collections.frequency(al,"e"));
+
+
+    }
 }
