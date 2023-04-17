@@ -1,7 +1,9 @@
+package TestNGPractice;
+
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-public class retryAnalyzerClass implements IRetryAnalyzer
+public class retryAnalyzer implements IRetryAnalyzer
 {
     int retryCnt=2;
     int count=0;

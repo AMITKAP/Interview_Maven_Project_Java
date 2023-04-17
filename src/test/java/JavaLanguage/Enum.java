@@ -1,3 +1,5 @@
+package JavaLanguage;
+
 import org.testng.annotations.Test;
 
 public class Enum

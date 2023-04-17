@@ -1,3 +1,6 @@
+package JavaLanguage;
+
+import JavaLanguage.Multithreading;
 import org.testng.annotations.Test;
 
 public class MultithreadingInvoke

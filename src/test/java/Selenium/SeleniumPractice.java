@@ -1,3 +1,6 @@
+package Selenium;
+
+import TestNGPractice.retryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -53,7 +56,7 @@ public class SeleniumPractice {
 
     }
 
-    @Test(retryAnalyzer =retryAnalyzerClass.class)
+    @Test(retryAnalyzer = retryAnalyzer.class)
     public static void selectDropDown() {
 
         ExtentTest test =rep.createTest("Test");
