@@ -3,7 +3,6 @@ package JavaLanguage;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class CollectionsClass
     public static void countFrequency()
     {
 
-        List<String> mylist = new ArrayList<String>();
+        List<java.lang.String> mylist = new ArrayList<>();
         mylist.add("practice");
         mylist.add("code");
         mylist.add("code");
@@ -26,7 +25,7 @@ public class CollectionsClass
     @Test
     public static void sortCollections()
     {
-        List<String> mylist = new ArrayList<String>();
+        List<java.lang.String> mylist = new ArrayList<>();
         mylist.add("practice");
         mylist.add("code");
 
@@ -37,7 +36,7 @@ public class CollectionsClass
     @Test
     public static void reverseCollections()
     {
-        List<String> mylist = new ArrayList<String>();
+        List<java.lang.String> mylist = new ArrayList<>();
         mylist.add("practice");
         mylist.add("code");
         mylist.add("amit");

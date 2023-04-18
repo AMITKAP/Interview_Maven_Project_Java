@@ -3,7 +3,7 @@ package JavaLanguage;
 import org.testng.annotations.Test;
 public class ChildClass extends SuperAndThisKeyword
 {
-    String str ="I'm an instance variable from child class";
+    java.lang.String str ="I'm an instance variable from child class";
     ChildClass()
     {
         super("print");
@@ -19,7 +19,7 @@ public class ChildClass extends SuperAndThisKeyword
     }
 
     @Override
-    public String toString()
+    public java.lang.String toString()
     {
         return "I'm from child class tostring";
     }

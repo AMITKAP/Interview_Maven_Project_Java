@@ -2,6 +2,7 @@ package JavaLanguage;
 
 import org.testng.annotations.Test;
 import java.util.regex.*;
+import java.lang.String;
 
 public class RegularExpression
 {
@@ -29,16 +30,16 @@ public class RegularExpression
     @Test
     public void regularExpReplaceAll()
     {
-        String str="0123";
-        String str1=str.replaceAll("[0-9]","a");
-        String str2=str.replaceAll("\\d","a");
+        java.lang.String str="0123";
+        java.lang.String str1=str.replaceAll("[0-9]","a");
+        java.lang.String str2=str.replaceAll("\\d","a");
         System.out.println(str1);
     }
 
     @Test
     public void regularExpEitherABC ()
     {
-        String test="001c";
+        java.lang.String test="001c";
 
         Pattern pat=Pattern.compile("[abc]");
         Matcher match=pat.matcher(test);

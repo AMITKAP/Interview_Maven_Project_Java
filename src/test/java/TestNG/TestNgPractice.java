@@ -1,6 +1,5 @@
-package TestNGPractice;
+package TestNG;
 
-import TestNGPractice.TestNgListner;
 import org.testng.ITestResult;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;

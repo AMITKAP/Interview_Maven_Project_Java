@@ -4,19 +4,19 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.*;
 
-public class SetPractice
+public class Set
 {
 
-      private static HashSet<String> hS1;
-      private static HashSet<String> hS2;
+      private static HashSet<java.lang.String> hS1;
+      private static HashSet<java.lang.String> hS2;
       private static LinkedHashSet<String> ls;
-      private static TreeSet<String> ts;
-      SetPractice()
+      private static TreeSet<java.lang.String> ts;
+      Set()
       {
-          hS1=new HashSet<String>();
-          hS2=new HashSet<String>();
-          ls=new LinkedHashSet<>(hS1);
-          ts=new TreeSet<String>();
+          hS1=new HashSet<java.lang.String>();
+          hS2=new HashSet<java.lang.String>();
+          ls=new LinkedHashSet<>();
+          ts=new TreeSet<java.lang.String>();
       }
 
       @BeforeTest
@@ -45,7 +45,7 @@ public class SetPractice
     public static void eleIterationThroughForEach()
     {
 
-        for(String str:hS1)
+        for(java.lang.String str:hS1)
         {
             System.out.println(str);
         }
@@ -56,7 +56,7 @@ public class SetPractice
     public static void eleIterator()
     {
 
-        Iterator<String> itStr=hS1.iterator();
+        Iterator<java.lang.String> itStr=hS1.iterator();
 
         while (itStr.hasNext())
        {

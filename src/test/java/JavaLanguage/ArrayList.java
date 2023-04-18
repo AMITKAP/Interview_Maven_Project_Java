@@ -3,19 +3,22 @@ package JavaLanguage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.lang.String;
 import java.util.*;
+import java.lang.*;
 
 public class ArrayList
 {
-      private static java.util.ArrayList<String> arrayListObj1;
-      private static java.util.ArrayList<String> arrayListObj2;
+      private static java.util.ArrayList<java.lang.String> arrayListObj1;
+      private static java.util.ArrayList<java.lang.String> arrayListObj2;
       private static ListIterator<String> lItr;
 
       @BeforeTest
       public void CreateArrayList()
       {
-            arrayListObj1= new java.util.ArrayList<String>();
-            arrayListObj2= new java.util.ArrayList<String>();
+            arrayListObj1= new java.util.ArrayList<java.lang.String>();
+            arrayListObj2= new java.util.ArrayList<java.lang.String>();
             arrayListObj1.add("ai");
             arrayListObj1.add(1,"I'm ArrayList");
             arrayListObj1.add("I'm");
@@ -74,7 +77,7 @@ public class ArrayList
     public static void displayingArrayListEle()
     {
 
-        for(String str:arrayListObj1)
+        for(java.lang.String str:arrayListObj1)
         {
             System.out.println(str);
         }
@@ -108,9 +111,9 @@ public class ArrayList
     public static void stringToArrayListAndGettingFreq()
     {
 
-        String str = "Geeks";
-        String[] strSplit = str.split("");
-        List<String> al= Arrays.asList(strSplit);
+        java.lang.String str = "Geeks";
+        java.lang.String[] strSplit = str.split("");
+        List<java.lang.String> al= Arrays.asList(strSplit);
         System.out.println(Collections.frequency(al,"e"));
 
 

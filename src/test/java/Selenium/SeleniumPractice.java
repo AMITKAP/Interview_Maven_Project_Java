@@ -1,6 +1,6 @@
 package Selenium;
 
-import TestNGPractice.retryAnalyzer;
+import TestNG.retryAnalyzer;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;

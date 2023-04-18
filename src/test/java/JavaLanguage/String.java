@@ -4,13 +4,13 @@ import org.testng.annotations.Test;
 
 import java.util.StringTokenizer;
 
-public class StringPractice
+public class String
 {
 
-    private static String str1,str2;
+    private static java.lang.String str1,str2;
     private static StringBuilder builder;
 
-     StringPractice()
+     String()
 
      {
          str1="amit kap";
@@ -119,10 +119,10 @@ public class StringPractice
     public static void stringsComp()
     {
 
-        String str1="amit kapoor";
-        String str2="amit kapoor";
-        String str3= new String("amit kapoor");
-        String str4= new String("amit");
+        java.lang.String str1="amit kapoor";
+        java.lang.String str2="amit kapoor";
+        java.lang.String str3= new java.lang.String("amit kapoor");
+        java.lang.String str4= new java.lang.String("amit");
 
 
         System.out.println(str1.compareTo(str2));
@@ -169,7 +169,7 @@ public class StringPractice
     @Test
     public void stringTokenizer()
     {
-        String test="amit@kapoor";
+        java.lang.String test="amit@kapoor";
         StringTokenizer token= new StringTokenizer(test,"@");
 
         while ((token.hasMoreTokens()))
@@ -183,8 +183,8 @@ public class StringPractice
     @Test
     public void stringsEquals()
     {
-        String test ="ab";
-        String test1 ="ba";
+        java.lang.String test ="ab";
+        java.lang.String test1 ="ba";
 
         System.out.println(test1.equals(test));
     }

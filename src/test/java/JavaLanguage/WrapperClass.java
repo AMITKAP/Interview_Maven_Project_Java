@@ -1,12 +1,13 @@
 package JavaLanguage;
 
 import org.testng.annotations.Test;
+import java.lang.String;
 
-public class WrapperClassPractice
+public class WrapperClass
 {
 
     private static Integer i=0;
-    WrapperClassPractice()
+    WrapperClass()
     {
         Integer i=10;
         Integer obj= new Integer(i);

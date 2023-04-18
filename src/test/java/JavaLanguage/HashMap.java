@@ -4,18 +4,17 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class HashMapPractice
+public class HashMap
 {
-    private static HashMap<String,String> map;
+    private static java.util.HashMap<java.lang.String, java.lang.String> map;
 
     @BeforeTest
     public static void createMapForTest()
     {
-        map=new HashMap<String,String>();
+        map=new java.util.HashMap<>();
         map.put("LName","Sum");
         map.put("FName","Amit");
     }
@@ -52,7 +51,7 @@ public class HashMapPractice
     @Test
     public static void iterateKeySetInMap()
     {
-        for(Map.Entry<String,String> ent :map.entrySet())
+        for(Map.Entry<java.lang.String, java.lang.String> ent :map.entrySet())
         {
             System.out.println(ent.getKey());
             System.out.println(ent.getValue());
@@ -76,7 +75,7 @@ public class HashMapPractice
     @Test
     public static void iterateValuesInMap()
     {
-         for(String val:map.values())
+         for(java.lang.String val:map.values())
          {
              System.out.println(val);
          }
@@ -85,7 +84,7 @@ public class HashMapPractice
     @Test
     public static void iterateKeysInMap()
     {
-        for(String key:map.keySet())
+        for(java.lang.String key:map.keySet())
         {
             System.out.println(key);
         }

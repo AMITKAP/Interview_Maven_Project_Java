@@ -1,21 +1,22 @@
 package JavaLanguage;
 
 import org.testng.annotations.Test;
-
-import javax.swing.plaf.nimbus.State;
-import java.util.*;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.lang.String;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.*;
 
-public class JavaCodingPractice
+public class LeetCodeAndJava
 {
 
     @Test
     public static void checkVowelsInAString()
     {
-        String testString="amit kapoor";
-        String testString1="010101";
+        java.lang.String testString="amit kapoor";
+        java.lang.String testString1="010101";
         System.out.println(testString.toLowerCase().matches(".*[aeiou].*"));
     }
 
@@ -23,7 +24,7 @@ public class JavaCodingPractice
     public static void removeSpacesFromAString()
     {
 
-        String str="amit kapoor";
+        java.lang.String str="amit kapoor";
         StringBuilder bld= new StringBuilder();
 
         for(char ch:str.toCharArray())
@@ -162,16 +163,16 @@ public class JavaCodingPractice
     @Test
     public void maxOcuCharInAString()
     {
-        String test="amit kapooor";
+        java.lang.String test="amit kapooor";
         char maxKey =0;
-        HashMap<Character,Integer> map= new HashMap<Character,Integer>();
+        HashMap map= new HashMap<Character,Integer>();
 
         for(char ch: test.toCharArray())
         {
             if(map.containsKey(ch))
             {
 
-                map.put(ch,map.get(ch)+1);
+                map.put(ch,map.get(ch));
             }
             else
             {
@@ -179,18 +180,8 @@ public class JavaCodingPractice
             }
         }
 
-        int maxOcu=map.get(test.charAt(0));
+        int maxOcu= (int) map.get(test.charAt(0));
         maxKey=test.charAt(0);
-
-        for(Map.Entry<Character,Integer> ent: map.entrySet())
-        {
-            if(ent.getValue()>maxOcu)
-            {
-                maxKey= ent.getKey();
-            }
-
-        }
-
         System.out.println(maxKey);
 
     }
@@ -330,8 +321,8 @@ public class JavaCodingPractice
     @Test
     public void subStringFinder1()
     {
-        String test="amit kapoor";
-        String sub="amit";
+        java.lang.String test="amit kapoor";
+        java.lang.String sub="amit";
 
         System.out.println(test.matches("(.*)"+sub+"(.*)"));
     }
